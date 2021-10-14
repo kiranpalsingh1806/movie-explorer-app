@@ -1,6 +1,11 @@
+import axios from "axios";
 
 
 const Trending  = () => {
+
+    // const fetchTrending = () => {
+    //     const {data} = await axios.get()
+    // }
     return (
         <div>
             <span className='pageTitle'>
