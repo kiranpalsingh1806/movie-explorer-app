@@ -5,11 +5,12 @@ import './Trending.css';
 
 const Trending  = () => {
 
-    const [content, setContent] = useState([])
+    const [content, setContent] = useState([]);
+    const [page, setPage] = useState(1);
 
     const fetchTrending = async () => {
         const { data } = await axios.get(
-           `https://api.themoviedb.org/3/movie/550?api_key=${process.env.REACT_APP_API_KEY}`
+           `https://api.themoviedb.org/3/movie/550?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
         );
 
         console.log(data);
@@ -42,6 +43,7 @@ const Trending  = () => {
                     )
                 }
             </div>
+            <CustomPagination/>
         </div>
     )
 }
